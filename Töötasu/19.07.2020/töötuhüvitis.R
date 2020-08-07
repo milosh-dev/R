@@ -1,30 +1,53 @@
-#Impordi exceli andmed Töötukassa koduleheküljelt
-# 1. veebilehe aadress (sõltub kuupäevast)
-url <- "https://www.tootukassa.ee/sites/tootukassa.ee/files/asutuste_nimekiri_19.07.2020.xlsx"
+################################################
+# Impordib exceli andmed Töötukassa koduleheküljelt
+#
+# Autor: Raoul Lättemäe, juuli-august 2020
+################################################
+
+# Lae andmed salvestatud excelist
+library(openxlsx)
+library(tidyverse)
 
 # Määra töökaust, mida kasutatakse andmete laadimiseks
-setwd(file.path("/home/raoul/Dokumendid/RM/Töötasu"))
-# Kontrolli töökataloogi asukohta
-getwd()
+setwd(file.path("/home/raoul/Dokumendid/R/Töötasu"))
+getwd()   # Kontrolli töökataloogi asukohta
+
+# 1. - sisesta veebilehe aadress (sõltub kuupäevast)
+url <- "https://www.tootukassa.ee/sites/tootukassa.ee/files/asutuste_nimekiri_02.08.2020.xlsx"
 
 # Määra (kaust) ja fail kuhu andmed salvestatakse
-folder <- "19.07.2020"
+folder <- "August.2020"
 dir.create(folder)
 local <- file.path(folder, "andmed.xlsx")
 
 # Lae fail alla
 download.file(url, local)
 
-# Lae andmed salvestatud excelist
-# install.packages("openxlsx")
-library(openxlsx)
-library(tidyverse)
 
-# Toimib
-my.data <- read.xlsx(xlsxFile="/home/raoul/Dokumendid/RM/Töötasu/19.07.2020/andmed.xlsx", 
-                      sheet = 6,
+# Lae andmed
+data.weeks <- read.xlsx(xlsxFile=local, 
+                        sheet = 1,
+                        startRow=2)
+data.03 <- read.xlsx(xlsxFile=local, 
+                        sheet = 2,
+                        startRow=2)
+data.04 <- read.xlsx(xlsxFile=local, 
+                     sheet = 3,
+                     startRow=2)
+data.05 <- read.xlsx(xlsxFile=local, 
+                     sheet = 4,
+                     startRow=2)
+data.06 <- read.xlsx(xlsxFile=local, 
+                     sheet = 5,
+                     startRow=2)
+data.koond<- read.xlsx(xlsxFile=local, 
+                       sheet = 6,
+                       startRow=2)
+
+#my.data <- read.xlsx(xlsxFile="/home/raoul/Dokumendid/RM/Töötasu/19.07.2020/andmed.xlsx", 
+#                      sheet = 6,
                       #sheetName="Asutuste kokkuvõte_koond", 
-                      startRow=2)
+#                      startRow=2)
 
 # Konverteri tibbleks
 my.data <- as_tibble(my.data)
@@ -78,7 +101,7 @@ tail(my.data)
 
 # salvesta andmed
 save(my.data, file="andmed.rdata")
-#load(andmed.rdata)
+load(andmed.rdata)
 
 # koosta boxplot
 library(tidyverse)

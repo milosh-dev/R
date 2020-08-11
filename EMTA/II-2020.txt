@@ -1,0 +1,40 @@
+    Kuupäev            aasta        kv         Registrikood           Nimi          
+ Min.   :2019-03-31   2019:131492   1:131492   Length:131492      Length:131492     
+ 1st Qu.:2019-03-31                            Class :character   Class :character  
+ Median :2019-03-31                            Mode  :character   Mode  :character  
+ Mean   :2019-03-31                                                                 
+ 3rd Qu.:2019-03-31                                                                 
+ Max.   :2019-03-31                                                                 
+                                                                                    
+                                        Liik         KMKR         EMTAK.kood   
+ Eestis asuv rahvusvaheline organisatsioon:     2   ei :40154   G      :20629  
+ FIE                                      :  4380   jah:91338   M      :17492  
+ Mitteresident                            :  3612               L      :14129  
+ Mittetulundusühing                       : 10800               F      :13568  
+ Sihtasutus                               :   468               C      : 8682  
+ Valitsus- ja riigiasutus                 :  1963               (Other):53581  
+ Äriühing                                 :110267               NA's   : 3411  
+                                                             EMTAK                   Omavalitsus   
+ HULGI- JA JAEKAUBANDUS; MOOTORSŐIDUKITE JA MOOTORRATASTE REMONT:20629   Harju maakond     :70677  
+ KUTSE-, TEADUS- JA TEHNIKAALANE TEGEVUS                        :17492   Tartu maakond     :13153  
+ KINNISVARAALANE TEGEVUS                                        :14129   Pärnu maakond     : 6963  
+ EHITUS                                                         :13568   Ida-Viru maakond  : 5608  
+ TÖÖTLEV TÖÖSTUS                                                : 8682   Lääne-Viru maakond: 4071  
+ (Other)                                                        :53581   (Other)           :20965  
+ NA's                                                           : 3411   NA's              :10055  
+               Maakond                      Vald          Linn            Maksud          Tööjõumaksud     
+ Harju maakond     :70677   Harju maakond     :70677   FALSE:131492   Min.   :       0   Min.   :       0  
+ Tartu maakond     :13153   Tartu maakond     :13153                  1st Qu.:     337   1st Qu.:      23  
+ Pärnu maakond     : 6963   Pärnu maakond     : 6963                  Median :    1274   Median :     648  
+ Ida-Viru maakond  : 5608   Ida-Viru maakond  : 5608                  Mean   :   23249   Mean   :   12222  
+ Lääne-Viru maakond: 4071   Lääne-Viru maakond: 4071                  3rd Qu.:    5621   3rd Qu.:    2735  
+ (Other)           :20965   (Other)           :20965                  Max.   :54939980   Max.   :51022753  
+ NA's              :10055   NA's              :10055                  NA's   :25654      NA's   :25654     
+     Käive              Töötajad       Maksud.na.null     Tööjõumaksud.na.null Käive.na.null       Töötajad.na.null  
+ Min.   : -4186763   Min.   :   1.00   Min.   :       0   Min.   :       0     Min.   : -4186763   Min.   :   0.000  
+ 1st Qu.:     1487   1st Qu.:   1.00   1st Qu.:       3   1st Qu.:       0     1st Qu.:        0   1st Qu.:   0.000  
+ Median :    10738   Median :   2.00   Median :     662   Median :     424     Median :     2310   Median :   1.000  
+ Mean   :   207565   Mean   :   7.78   Mean   :   18713   Mean   :    9837     Mean   :   144987   Mean   :   5.381  
+ 3rd Qu.:    46218   3rd Qu.:   4.00   3rd Qu.:    3754   3rd Qu.:    1801     3rd Qu.:    23279   3rd Qu.:   3.000  
+ Max.   :347966105   Max.   :8342.00   Max.   :54939980   Max.   :51022753     Max.   :347966105   Max.   :8342.000  
+ NA's   :39643       NA's   :40541                                                                                   

@@ -9,6 +9,9 @@ library(openxlsx)     # impordi excelist
 #install.packages("hexbin")
 library(hexbin)
 
+# Herfindhal index
+install.packages("hhi")
+
 load("2020_ii.rdata")
 ii.2020 <- data
 rm(data)
@@ -34,6 +37,7 @@ i.2019 <- data
 rm(data)
 
 view(i.2020)
+summary(i.2020)
 
 # Koosta andmete koond
 andmed <- select(ii.2020, Registrikood, Käive, Maksud, Töötajad, Tööjõumaksud)
@@ -79,20 +83,53 @@ baas <- right_join(register, vaheandmed, by="Registrikood")
 write.xlsx(baas, "baas.xlsx")
 
 
+# Calculate Herfidhal index for industry
+library(hhi)
+h.index <- andmed %>%
+  filter(EMTAK.kood == 'C') %>%
+  mutate(Käive = Käive.i.2019 + Käive.ii.2019 + Käive.iii.2019 + Käive.iv.2019) %>%
+  filter(!is.na(Käive)) %>%
+  select(Käive) 
+  
+h.total <- sum(h.index$Käive)
+
+h.index <- h.index %>%
+  mutate(Osakaal = Käive/h.total) %>%
+  mutate(Osakaal = Osakaal ^ 2)
+
+h.index.value <- sum(h.index$Osakaal) * 1000
+
+# pull vector
+
+hhi(h.index, "Osakaal")
+  
+
+
 d <- andmed %>% 
-  filter(EMTAK.kood == 'F') %>%
+  filter(EMTAK.kood == 'C') %>%
   #  filter(Käive.ii.2020 > 1000000) %>%
   # filter(Käive.ii.2019 > 0 && Käive.i.2019 > 0) %>%
   mutate(Käive = Käive.i.2019 + Käive.ii.2019 + Käive.iii.2019 + Käive.iv.2019) %>%
   filter(Käive > 0) %>%
-  mutate(I.kv.kasv = (Käive.i.2020/Käive.i.2019 - 1)*100) %>%
   mutate(II.kv.kasv = (Käive.ii.2020/Käive.ii.2019 - 1)*100) %>%
-  gather(key, value, II.kv.kasv:I.kv.kasv) %>%
+  mutate(I.kv.kasv = (Käive.i.2020/Käive.i.2019 - 1)*100) %>%
+  filter(is.finite(I.kv.kasv)) %>%
+  filter(is.finite(II.kv.kasv)) %>%
+  gather(key, value, I.kv.kasv:II.kv.kasv) %>%
   #  mutate(Muut = (Käive.ii.2020-Käive.ii.2019)*100/Käive) %>%
-  #  arrange(Käive) %>%
+  arrange(desc(key)) %>%
   #  mutate(rn = row_number()) %>%
   select(Käive, key, value)
 # select(Käive, I.kv.kasv, II.kv.kasv)
+
+s <- d %>% 
+  group_by(key) %>%
+  summarize_at(vars(value), list(~ weighted.mean(., Käive, na.rm = TRUE), ~ median(., na.rm = TRUE)))
+
+
+d.mean <- mean(d$value, na.rm=TRUE)
+d.median <- median(d$value, na.rm=TRUE)
+d.mode <- mode(d$value, na.rm=TRUE)
 
 my.density <- density(log10(d$value, na.rm = TRUE))
 
@@ -101,6 +138,7 @@ my.density <- density(log10(d$value, na.rm = TRUE))
 modes <- function(d){
   i <- which(diff(sign(diff(d$key))) < 0) + 1
   data.frame(x = d$value[i], y = d$key[i])
+  
 }
 
 modes(d)
@@ -119,24 +157,31 @@ modes(my.density)$value
 
 my.density$value[which.max(my.density$value)]
 
-# joonista kaaludega
+
+# joonista kaaludega 
 ggplot(d) +
-  geom_density(aes(x = value, weights=Käive, y = ..count.., fill=key), alpha=I(0.4)) + 
+  geom_density(aes(x = value, weights=Käive, fill=key), alpha=I(0.4)) + 
+  #  geom_density(aes(x = value, weights=Käive, y = ..count.., fill=key), alpha=I(0.4)) + 
   #  geom_density(aes(x = Muut.ii, fill=I("#56B4E9")), alpha=I(0.4)) + 
   theme(legend.position="bottom") +
   xlab("käibe % muutus võrreldes eelmise aastaga") +
-  ylab("ettevõtete arv") +
+  ylab("Käibega kaalutud tihedus") +
+  scale_fill_manual(values=c("deepskyblue", "brown1", "green")) +
+  guides(fill=guide_legend(title="periood")) +
   geom_vline(aes(xintercept=-30, color=I("red")), linetype = "dashed") +
 #  geom_vline(xintercept = modes(d)$key) +
   xlim(-120,150)
 
 # joonista kaaludeta
 ggplot(d) +
-  geom_density(aes(x = value, fill=key, y = ..count..), alpha=I(0.4)) + 
-  #  geom_density(aes(x = Muut.ii, fill=I("#56B4E9")), alpha=I(0.4)) + 
+  geom_density(aes(x = value, fill=key), alpha=I(0.4)) + 
+  #  geom_density(aes(x = value, fill=key, y = ..count..), alpha=I(0.4)) + 
+  #  geom_density(aes(x = value, fill=I("#56B4E9")), alpha=I(0.4)) + 
   theme(legend.position="bottom") +
   xlab("käibe % muutus võrreldes eelmise aastaga") +
-  ylab("ettevõtete arv") +
+  ylab("tihedus") +
+  scale_fill_manual(values=c("deepskyblue", "brown1", "green")) +
+  guides(fill=guide_legend(title="periood")) +
   geom_vline(aes(xintercept=-30, color="red"), linetype = "dashed") +
   xlim(-120,150)
 

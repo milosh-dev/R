@@ -37,7 +37,8 @@ i.2019 <- data
 rm(data)
 
 view(i.2020)
-summary(i.2020)
+my.symm <- summary(i.2020)
+capture.output(my.symm, file="II-2020.txt")
 
 # Koosta andmete koond
 andmed <- select(ii.2020, Registrikood, Käive, Maksud, Töötajad, Tööjõumaksud)

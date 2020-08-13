@@ -1,0 +1,64 @@
+ Registrikood       Käive.ii.2020       Maksud.ii.2020     Töötajad.ii.2020  Tööjõumaksud.ii.2020  Käive.i.2020      
+ Length:140502      Min.   : -3968052   Min.   :       0   Min.   :   1.00   Min.   :       0     Min.   :  -638331  
+ Class :character   1st Qu.:      700   1st Qu.:     238   1st Qu.:   1.00   1st Qu.:       0     1st Qu.:     1306  
+ Mode  :character   Median :     8350   Median :    1041   Median :   2.00   Median :     617     Median :    10582  
+                    Mean   :   186117   Mean   :   22048   Mean   :   7.21   Mean   :   12360     Mean   :   205432  
+                    3rd Qu.:    38664   3rd Qu.:    4630   3rd Qu.:   4.00   3rd Qu.:    2289     3rd Qu.:    45610  
+                    Max.   :208093251   Max.   :57146111   Max.   :4581.00   Max.   :62825726     Max.   :368935881  
+                    NA's   :43616       NA's   :32573      NA's   :45843     NA's   :32573        NA's   :45381      
+ Maksud.i.2020      Töötajad.i.2020   Tööjõumaksud.i.2020 Käive.iv.2019       Maksud.iv.2019     Töötajad.iv.2019 
+ Min.   :       0   Min.   :   1.00   Min.   :       0    Min.   : -1185562   Min.   :       0   Min.   :   1.00  
+ 1st Qu.:     350   1st Qu.:   1.00   1st Qu.:       0    1st Qu.:     1977   1st Qu.:     400   1st Qu.:   1.00  
+ Median :    1329   Median :   2.00   Median :     700    Median :    13010   Median :    1468   Median :   2.00  
+ Mean   :   23980   Mean   :   7.42   Mean   :   13087    Mean   :   230036   Mean   :   24649   Mean   :   7.74  
+ 3rd Qu.:    5799   3rd Qu.:   4.00   3rd Qu.:    2905    3rd Qu.:    55000   3rd Qu.:    6461   3rd Qu.:   4.00  
+ Max.   :52771189   Max.   :4537.00   Max.   :58317377    Max.   :316990218   Max.   :51662802   Max.   :8510.00  
+ NA's   :32846      NA's   :47237     NA's   :32846       NA's   :47541       NA's   :35269      NA's   :48961    
+ Tööjõumaksud.iv.2019 Käive.iii.2019      Maksud.iii.2019    Töötajad.iii.2019 Tööjõumaksud.iii.2019 Käive.ii.2019      
+ Min.   :       0     Min.   :  -258447   Min.   :       0   Min.   :   1.0    Min.   :       0      Min.   : -1152895  
+ 1st Qu.:       0     1st Qu.:     2009   1st Qu.:     420   1st Qu.:   1.0    1st Qu.:      55      1st Qu.:     1979  
+ Median :     708     Median :    12881   Median :    1505   Median :   2.0    Median :     748      Median :    12466  
+ Mean   :   12689     Mean   :   227544   Mean   :   25747   Mean   :   7.9    Mean   :   13427      Mean   :   234390  
+ 3rd Qu.:    2972     3rd Qu.:    54791   3rd Qu.:    6561   3rd Qu.:   4.0    3rd Qu.:    3136      3rd Qu.:    52640  
+ Max.   :56958667     Max.   :315655993   Max.   :51608564   Max.   :8421.0    Max.   :56838428      Max.   :282432844  
+ NA's   :35269        NA's   :49887       NA's   :39219      NA's   :50664     NA's   :39219         NA's   :52058      
+ Maksud.ii.2019     Töötajad.ii.2019  Tööjõumaksud.ii.2019  Käive.i.2019       Maksud.i.2019      Töötajad.i.2019  
+ Min.   :       0   Min.   :   1.00   Min.   :       0     Min.   : -4186763   Min.   :       0   Min.   :   1.00  
+ 1st Qu.:     340   1st Qu.:   1.00   1st Qu.:       0     1st Qu.:     2003   1st Qu.:     403   1st Qu.:   1.00  
+ Median :    1332   Median :   2.00   Median :     673     Median :    11801   Median :    1433   Median :   2.00  
+ Mean   :   25137   Mean   :   8.09   Mean   :   12730     Mean   :   216832   Mean   :   24684   Mean   :   8.11  
+ 3rd Qu.:    5888   3rd Qu.:   4.00   3rd Qu.:    2839     3rd Qu.:    49343   3rd Qu.:    6113   3rd Qu.:   4.00  
+ Max.   :49175843   Max.   :8348.00   Max.   :54400054     Max.   :347966105   Max.   :54939980   Max.   :8342.00  
+ NA's   :38151      NA's   :52668     NA's   :38151        NA's   :53729       NA's   :42189      NA's   :54915    
+ Tööjõumaksud.i.2019                                                             EMTAK         EMTAK.kood   
+ Min.   :       0    HULGI- JA JAEKAUBANDUS; MOOTORSÕIDUKITE JA MOOTORRATASTE REMONT:21996   G      :21996  
+ 1st Qu.:      74    KUTSE-, TEADUS- JA TEHNIKAALANE TEGEVUS                        :18419   M      :18419  
+ Median :     724    KINNISVARAALANE TEGEVUS                                        :15149   L      :15149  
+ Mean   :   12995    EHITUS                                                         :14764   F      :14764  
+ 3rd Qu.:    3009    TÖÖTLEV TÖÖSTUS                                                : 9212   C      : 9212  
+ Max.   :51022753    INFO JA SIDE                                                   : 9173   J      : 9173  
+ NA's   :42189       (Other)                                                        :51789   (Other):51789  
+                                        Liik         KMKR             Maakond         Linn      
+ Eestis asuv rahvusvaheline organisatsioon:     2   ei :42584   Harju     :75985   FALSE:56464  
+ FIE                                      :  4119   jah:97918   Tartu     :14001   TRUE :84038  
+ Mitteresident                            :  3959                         :10539                
+ Mittetulundusühing                       : 10997               Pärnu     : 7360                
+ Sihtasutus                               :   463               Ida-Viru  : 5948                
+ Valitsus- ja riigiasutus                 :  1920               Lääne-Viru: 4322                
+ Äriühing                                 :119042               (Other)   :22347                
+                                               EMTAK.2        EMTAK.2.kood         arv            arv_1_kuu     
+ Jaekaubandus, v.a mootorsõidukid ja mootorrattad  :  1753   47     :  1753   Min.   :   1.00   Min.   :  0.00  
+ Toidu ja joogi serveerimine                       :  1359   56     :  1359   1st Qu.:   4.00   1st Qu.:  0.00  
+ Muu teenindus                                     :  1299   96     :  1299   Median :   7.00   Median :  0.00  
+ Hulgikaubandus, v.a mootorsõidukid ja mootorrattad:  1179   46     :  1179   Mean   :  15.75   Mean   :  2.96  
+ Eriehitustööd                                     :  1113   43     :  1113   3rd Qu.:  13.00   3rd Qu.:  2.00  
+ (Other)                                           : 10796   (Other): 10796   Max.   :1834.00   Max.   :367.00  
+ NA's                                              :123003   NA's   :123003   NA's   :132700    NA's   :132700  
+   arv_2_kuu        arv_3_kuu         brutosumma         kogukulu      
+ Min.   :  0.00   Min.   :   0.00   Min.   :      3   Min.   :      4  
+ 1st Qu.:  1.00   1st Qu.:   0.00   1st Qu.:   1120   1st Qu.:   1499  
+ Median :  4.00   Median :   0.00   Median :   2604   Median :   3484  
+ Mean   :  9.52   Mean   :   3.27   Mean   :  10938   Mean   :  14635  
+ 3rd Qu.:  9.00   3rd Qu.:   0.00   3rd Qu.:   7621   3rd Qu.:  10197  
+ Max.   :691.00   Max.   :1649.00   Max.   :4330143   Max.   :5793731  
+ NA's   :132700   NA's   :132700    NA's   :123001    NA's   :123001   

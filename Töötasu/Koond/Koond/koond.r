@@ -103,11 +103,18 @@ tail(my.data)
 
 # salvesta andmed
 save(my.data, file="andmed.rdata")
-#load(andmed.rdata)
+load("~/Dokumendid/R/Töötasu/koond.rdata")
 
 # koosta boxplot
 library(tidyverse)
 #library(ggplot2)
+
+b <- ggplot(data.koond, aes(x = brutosumma/arv, y=fct_infreq(EMTAK))) + 
+  theme(
+    text = element_text(size = 12),
+    axis.text.y = element_text(size = 12),
+    axis.text.x = element_text(size = 12)
+  )
 
 # basic
 b <- ggplot(my.data, aes(x = brutosumma/saajate.arv, y=fct_infreq(tegevusala))) +

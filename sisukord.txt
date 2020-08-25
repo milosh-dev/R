@@ -1,0 +1,51 @@
+EAS:
+	andmebaas.r - koostab andmebaasi EAS andmetest. Registrikoodide sidumine on tehtud excelis eraldi.
+
+EMTA:
+	analyys.R - mingid vanad pildid/katsetused. Eelkõige erinevatest teemadest
+	emta.R - laeb andmed EMTA lehelt ja salvestab kvartalipõhise andmebaasi
+	evanalyys.R - koondab kvartalipõhised andmed 2019-2020 andmebaasiks
+	joonised.R - seob 2019-20 andmed viimase kvartali seisuga ja teeb tihedusjaotuse joonised
+	koond.R - mitmed katsetused erinevate tihedusjaotuste joonistega, Herfhindhali indeksiga
+	mix.R - seob registrid kuidagi omavahel kokku nii, et ka igas kvartalis unikaalsed andmed oleks kaasatud.
+	panelData.R - lihtsalt mingi katsetuse alge, mis on netist leitud ja kasutab netist leitud andmeid.
+	teisendused.R - mingid filtrite katsetused
+
+HTMKUL:
+	andmebaas.R - koostab andmebaasi HTM ja KUL andmetest. Registrikoodide sidumine on tehtud excelis eraldi.
+
+koond:
+	joonised.R - Teeb tihedusjaotuse joonised, kasutades 2019-20 andmeid + erinevate toetuste andmebaase. 
+	koond.R - Äriregistrist - millised ettevõtted on likvideerimisel või likvideeritud. (Peaks täiendama)
+	yld.R - koostab mingi koondtabeli EMTA ja Töötukassa andmetest ning salvestab selle failina Töötukassa/prop.csv
+
+Kredex:
+	andmebaas_laenud.R - koostab andmebaasi Kredexi laenudest. Andmete import pdfist excelisse on tehtud varem pdftohtml abil (pdf->html, html puhtaks, sh regex otsinguga tabeli formaati, tabel excelisse). Registrikoodide sidumine on tehtud excelis eraldi vlookup funktsiooniga.
+	andmebaas_käendused.R - koostab andmebaasi Kredexi käendustest. Andmete import pdfist excelisse on tehtud varem pdftohtml abil (pdf->html, html puhtaks, sh regex otsinguga tabeli formaati, tabel excelisse). Registrikoodide sidumine on tehtud excelis eraldi vlookup funktsiooniga.
+
+Lairiba:
+	Andmebaas Eesti aadressidest koos internetiühenduse kiirusega
+
+maksud:
+	maksud.r - veel üks katsetus maksuandmete laadimiseks emta kodulehelt. Siin on vist ka scatergramm katsetused andmete kohta.
+
+merge:
+	merge.r - katsetus EMTA kvartaalsete andmete liitmiseks ühte andmebaasi. Enne kui otsustasin dplyr kasuks. 
+	mergef.r -  katsetus EMTA kvartaalsete andmete liitmiseks ühte andmebaasi. Enne kui otsustasin dplyr kasuks. Tundub olevat sama fail
+
+Kredex:
+	andmebaas_laenud.R - koostab andmebaasi MES laenudest. Andmete import pdfist excelisse on tehtud varem pdftohtml abil (pdf->html, html puhtaks, sh regex otsinguga tabeli formaati, tabel excelisse). Registrikoodide sidumine on tehtud excelis eraldi vlookup funktsiooniga.
+
+	andmebaas_käendused.R - koostab andmebaasi MES käendustest. Andmete import pdfist excelisse on tehtud varem pdftohtml abil (pdf->html, html puhtaks, sh regex otsinguga tabeli formaati, tabel excelisse). Registrikoodide sidumine on tehtud excelis eraldi vlookup funktsiooniga.
+
+Töötasu: - vana kaust, aga boxplot joonised on siin.
+	analyys.R - sisutühi poolik fail. Laeb üksnes juba salvestatud andmed R-i.
+	koond/koond/koond.r - laeb andmed Töötukassa lehelt ja teeb erinevad boxplot joonised nendest, sh sektorite lõikes.
+	alamkataloogides kuupäevapõhised arvutused. 
+Töötukassa: - uus kaust andmete laadimiseks
+	andmebaas.R - koostab andmebaasi töötukassa andmetest
+Äriregister: 
+	analyys.R - kuu jooksul asutatud äriühingute arv
+	andmebaas.R - loob tuima andmebaasi äriregistri andmetest (ilma EMTAKita)
+	andmebaas_emtak.R - loob andmebaasi äriregistri koodide ja EMTAK koodide vahel
+	kustutatud_ettevotjad.R - toetust saanud ettevõtjad, kes on äriregistrist kustutatud

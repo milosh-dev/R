@@ -16,8 +16,8 @@ library(lubridate)    # kuupäevafunktsioonid
 
 # Lae andmed EMTA kodulehelt
 # muuda vajadusel allolev näitaja 
-kv <- '2019_ii'
-my.date <- "30.06.19"
+kv <- '2020_iii'
+my.date <- "30.09.20"
 # alates 2019-II kvartalist CSV
 # url <- paste("https://www.emta.ee/sites/default/files/kontaktid-ja-ametist/maksulaekumine-statistika/tasutud-maksud/tasutud_maksud_",
 #              kv,

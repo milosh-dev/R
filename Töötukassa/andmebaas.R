@@ -8,8 +8,8 @@ library(openxlsx)
 library(tidyverse)
 
 # Andmete asukoht
-url <- "https://www.tootukassa.ee/sites/tootukassa.ee/files/asutuste_nimekiri_09.08.2020.xlsx"
-local <- file.path(getwd(), "andmed_09082020.xlsx")
+url <- "https://www.tootukassa.ee/sites/tootukassa.ee/files/asutuste_nimekiri_06.09.2020.xlsx"
+local <- file.path(getwd(), "andmed_06092020.xlsx")
 
 # Lae fail alla
 download.file(url, local)

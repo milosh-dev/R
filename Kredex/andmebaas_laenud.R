@@ -27,3 +27,7 @@ View(my.data)
 
 # Salvesta laenuandmed
 save(my.data, file="laenud.rdata")
+
+# Koondandmed
+kokku <- my.data %>%
+  summarise(Kokku = sum(Laenusumma), Arv = n())

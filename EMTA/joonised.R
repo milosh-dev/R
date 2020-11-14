@@ -10,6 +10,10 @@ load("2019-2020.rdata")
 # Lae ettevõtete andmed
 load("2020_ii.rdata")
 
+# Lae äriregistri andmed
+load("../Äriregister/ariregister.rdata")
+andmed <- left_join(andmed, data %>% select(Registrikood, Asukoht), by = "Registrikood")
+
 # Lisa Ettevõtete registrist täiendavad koodid
 andmed <- left_join(andmed, data %>% select(Registrikood, EMTAK, EMTAK.kood, Liik, KMKR, Maakond, Linn), by = "Registrikood")
 data <- NULL
@@ -24,6 +28,10 @@ andmed <- left_join(andmed, data.koond %>% select(kood, EMTAK.2, EMTAK.2.kood, a
 data.koond <- NULL
 
 
+save(andmed, file="../Eesti/kaibed.rdata")
+
+
+
 # Hakkame tegema kokkuvõtteid
 my.symm <- summary(andmed)
 capture.output(my.symm, file="kokkuvõte.txt")
@@ -34,17 +42,19 @@ d <- andmed %>%
   # filter(Linn != TRUE) %>%
   # filter(EMTAK.kood == 'I') %>%
   # filter(is.na(arv)) %>%
-  filter(arv_2_kuu == 0 & arv_3_kuu == 0) %>%
+  # filter(arv_2_kuu == 0 & arv_3_kuu == 0) %>%
   # filter(!is.na(Töötajad.ii.2020)) %>%
   #  filter(Käive.ii.2020 > 1000000) %>%
   # filter(Käive.ii.2019 > 0 && Käive.i.2019 > 0) %>%
   mutate(Käive = Käive.i.2019 + Käive.ii.2019 + Käive.iii.2019 + Käive.iv.2019) %>%
   filter(Käive > 0) %>%
+  mutate(III.kv.kasv = (Käive.iii.2020/Käive.iii.2019 - 1)*100) %>%
   mutate(II.kv.kasv = (Käive.ii.2020/Käive.ii.2019 - 1)*100) %>%
   mutate(I.kv.kasv = (Käive.i.2020/Käive.i.2019 - 1)*100) %>%
   filter(is.finite(I.kv.kasv)) %>%
   filter(is.finite(II.kv.kasv)) %>%
-  gather(key, value, I.kv.kasv:II.kv.kasv) %>%
+  filter(is.finite(III.kv.kasv)) %>%
+  gather(key, value, II.kv.kasv:III.kv.kasv) %>%
   # gather(key, value, I.kv.kasv) %>%
   #  mutate(Muut = (Käive.ii.2020-Käive.ii.2019)*100/Käive) %>%
   # arrange(desc(key)) %>%
@@ -67,7 +77,7 @@ my.plot <- ggplot(d) +
   geom_vline(aes(xintercept=-30, color=I("red")), linetype = "dashed") +
   xlim(-120,150)
 
-
+my.plot
 
 # joonista kaaludega 
 ggplot(d) +

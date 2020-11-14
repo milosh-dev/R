@@ -19,7 +19,7 @@ for(a in aastad) {
 }
 
 # Lühenda vektorit vastavalt sellele, mis kvartalite andmed on olemas.
-vector <- vector[3:length(vector)]
+vector <- vector[2:length(vector)]
 
 # loo tühi andmestik ja lisa sinna tühi registrikoodi veerg
 aegrida <- tibble()

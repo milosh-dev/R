@@ -15,7 +15,7 @@ andmed <- left_join(andmed, data %>% select(Registrikood, EMTAK, EMTAK.kood, Lii
 data <- NULL
 
 # Lisa n-ö pihta saanud ettevõtete andmed
-load("pihtas.rdata")
+load("../EMTA/pihtas.rdata")
 
 # Lisa Kredexi andmed
 load("~/Dokumendid/R/Kredex/laenud.rdata")
@@ -62,11 +62,11 @@ capture.output(my.symm, file="kokkuvõte.txt")
 unique(andmed$Maakond)
 
 # Käibe jaotuse joonised
-d <- andmed.pihtas %>% 
+d <- andmed %>% 
   #filter(Asutus != "Haridus- ja Teadusministeerium") %>%
-  #filter(Maakond == c("Lääne", "Saare", "Hiiu")) %>%
-  # filter(Linn != TRUE) %>%
-  # filter(EMTAK.kood == 'I') %>%
+  #filter(Maakond == c("Saare", "Hiiu")) %>%
+  #filter(Linn == TRUE) %>%
+  filter(EMTAK.kood == 'F') %>%
   # filter(is.na(arv)) %>%
   #filter(arv_2_kuu == 0 & arv_3_kuu == 0) %>%
   # filter(Töötajad.i.2020 <= 10) %>%
@@ -76,17 +76,56 @@ d <- andmed.pihtas %>%
   mutate(Käive = Käive.i.2019 + Käive.ii.2019 + Käive.iii.2019 + Käive.iv.2019) %>%
   #filter(Käive < 1000000) %>%
   filter(Käive > 0) %>%
+  mutate(III.kv.kasv = (Käive.iii.2020/Käive.iii.2019 - 1)*100) %>%
   mutate(II.kv.kasv = (Käive.ii.2020/Käive.ii.2019 - 1)*100) %>%
   mutate(I.kv.kasv = (Käive.i.2020/Käive.i.2019 - 1)*100) %>%
   filter(is.finite(I.kv.kasv)) %>%
   filter(is.finite(II.kv.kasv)) %>%
-  gather(key, value, I.kv.kasv:II.kv.kasv) %>%
+  gather(key, value, I.kv.kasv:III.kv.kasv) %>%
   # gather(key, value, I.kv.kasv) %>%
   #  mutate(Muut = (Käive.ii.2020-Käive.ii.2019)*100/Käive) %>%
   # arrange(desc(key)) %>%
   #  mutate(rn = row_number()) %>%
   select(Käive, key, value)
 # select(Käive, I.kv.kasv, II.kv.kasv)
+
+# joonista kaaludeta
+# my.plot <- ggplot(d) +
+ggplot(d) +
+  geom_density(aes(x = value, fill=key), alpha=I(0.4)) + 
+  #  geom_density(aes(x = value, fill=key, y = ..count..), alpha=I(0.4)) + 
+  #  geom_density(aes(x = value, fill=I("#56B4E9")), alpha=I(0.4)) + 
+  theme(legend.position="bottom") +
+  xlab("käibe % muutus võrreldes eelmise aastaga") +
+  ylab("tihedus") +
+  #  scale_fill_manual(values=c("deepskyblue", "brown1", "green")) +
+  guides(fill=guide_legend(title="periood")) +
+  geom_vline(aes(xintercept=-30, color=I("red")), linetype = "dashed") +
+  scale_fill_manual(values=c("deepskyblue", "brown1", "green"), name='Paddling type',labels=c("2020 I kv", "2020 II kv", "2020 III kv"))+
+  #  scale_color_discrete(name='Paddling type',labels=c("Hands only", "Hands and feet")) +
+  xlim(-120,150)
+
+# joonista kaaludega 
+ggplot(d) +
+  geom_density(aes(x = value, weights=Käive, fill=key), alpha=I(0.4)) + 
+  #  geom_density(aes(x = value, weights=Käive, y = ..count.., fill=key), alpha=I(0.4)) + 
+  #  geom_density(aes(x = Muut.ii, fill=I(1"#56B4E9")), alpha=I(0.4)) + 
+  theme(legend.position="bottom") +
+  xlab("käibe % muutus võrreldes eelmise aastaga") +
+  ylab("Käibega kaalutud tihedus") +
+  scale_fill_manual(values=c("deepskyblue", "brown1", "green"), name='Paddling type',labels=c("2020 I kv", "2020 II kv", "2020 III kv"))+
+  guides(fill=guide_legend(title="periood")) +
+  geom_vline(aes(xintercept=-30, color=I("red")), linetype = "dashed") +
+  #  geom_vline(xinterc ept = modes(d)$key) +
+  xlim(-120,150) +
+  theme(axis.text.y=element_blank())
+
+
+
+
+
+
+
 
 d.halb <- andmed %>% 
   # mutate(Käive = Käive.i.2019 + Käive.ii.2019 + Käive.iii.2019 + Käive.iv.2019) %>%
@@ -102,19 +141,48 @@ d.halb.nimega <- left_join(d.halb, data, by=c("Registrikood"))
 
 
 # joonista kaaludeta
-my.plot <- ggplot(d) +
+# my.plot <- ggplot(d) +
+ggplot(d) +
   geom_density(aes(x = value, fill=key), alpha=I(0.4)) + 
   #  geom_density(aes(x = value, fill=key, y = ..count..), alpha=I(0.4)) + 
   #  geom_density(aes(x = value, fill=I("#56B4E9")), alpha=I(0.4)) + 
   theme(legend.position="bottom") +
   xlab("käibe % muutus võrreldes eelmise aastaga") +
   ylab("tihedus") +
-  scale_fill_manual(values=c("deepskyblue", "brown1", "green")) +
+#  scale_fill_manual(values=c("deepskyblue", "brown1", "green")) +
   guides(fill=guide_legend(title="periood")) +
   geom_vline(aes(xintercept=-30, color=I("red")), linetype = "dashed") +
+  scale_fill_manual(values=c("deepskyblue", "brown1", "green"), name='Paddling type',labels=c("2020 I kv", "2020 II kv", "2020 III kv"))+
+#  scale_color_discrete(name='Paddling type',labels=c("Hands only", "Hands and feet")) +
   xlim(-120,150)
 
-my.plot
+############################################
+# Ridge plot
+#install.packages("ggridges")
+library(ggridges)
+
+f <- d %>%
+  filter(value > -120) %>% 
+  order(key, decreasing = TRUE) %>%
+  filter(value < 150)
+
+
+ggplot(f, aes(x = value, y = key)) +
+  geom_density_ridges(aes(height=..density.., fill = key, weight=Käive, stat="density"), alpha = I(0.4)) +
+  scale_y_discrete(limits = rev(unique(sort(f$key)))) +
+  scale_fill_manual(values = c("#00AFBB", "#E7B800", "#FC4E07")) +
+  xlim(-120,150)
+
+# Ridge plot
+############################################
+
+
+ggplot(iris, aes(x = Sepal.Length, y = Species)) +
+  geom_density_ridges(aes(fill = Species)) +
+  scale_fill_manual(values = c("#00AFBB", "#E7B800", "#FC4E07"))
+# my.plot
+
+View(iris)
 
 ttt <- andmed.pihtas %>%
   group_by(EMTAK) %>%

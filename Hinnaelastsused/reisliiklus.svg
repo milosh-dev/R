@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='720.00pt' height='576.00pt' viewBox='0 0 720.00 576.00'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<defs>
+  <clipPath id='cpMC4wMHw3MjAuMDB8MC4wMHw1NzYuMDA='>
+    <rect x='0.00' y='0.00' width='720.00' height='576.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHw3MjAuMDB8MC4wMHw1NzYuMDA=)'>
+<rect x='0.00' y='0.00' width='720.00' height='576.00' style='stroke-width: 1.07; stroke: #FFFFFF; fill: #FFFFFF;' />
+</g>
+<defs>
+  <clipPath id='cpNjcuMDR8NjkxLjY1fDcxLjY2fDQ3My42NA=='>
+    <rect x='67.04' y='71.66' width='624.62' height='401.98' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpNjcuMDR8NjkxLjY1fDcxLjY2fDQ3My42NA==)'>
+<rect x='67.04' y='71.66' width='624.62' height='401.98' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
+<polyline points='67.04,380.29 691.65,380.29 ' style='stroke-width: 0.53; stroke: #DAD5D1; stroke-linecap: butt;' />
+<polyline points='67.04,272.97 691.65,272.97 ' style='stroke-width: 0.53; stroke: #DAD5D1; stroke-linecap: butt;' />
+<polyline points='67.04,165.66 691.65,165.66 ' style='stroke-width: 0.53; stroke: #DAD5D1; stroke-linecap: butt;' />
+<polyline points='202.08,473.64 202.08,71.66 ' style='stroke-width: 0.53; stroke: #DAD5D1; stroke-linecap: butt;' />
+<polyline points='344.02,473.64 344.02,71.66 ' style='stroke-width: 0.53; stroke: #DAD5D1; stroke-linecap: butt;' />
+<polyline points='485.95,473.64 485.95,71.66 ' style='stroke-width: 0.53; stroke: #DAD5D1; stroke-linecap: butt;' />
+<polyline points='627.89,473.64 627.89,71.66 ' style='stroke-width: 0.53; stroke: #DAD5D1; stroke-linecap: butt;' />
+<line x1='633.49' y1='473.64' x2='633.49' y2='71.66' style='stroke-width: 1.28; stroke: #00BFFF; stroke-dasharray: 6.83,6.83; stroke-linecap: butt;' />
+<polyline points='123.80,159.77 130.87,153.62 138.03,144.18 145.18,160.93 152.17,183.14 159.25,172.50 166.40,171.97 173.55,156.07 180.62,150.44 187.70,127.48 194.85,100.25 202.00,96.85 209.00,89.93 216.07,144.10 223.22,171.08 230.37,174.56 237.37,213.16 244.44,159.06 251.59,163.77 258.74,179.25 265.74,153.08 272.81,184.25 279.96,179.35 287.12,169.50 294.19,92.11 301.26,132.65 308.41,141.29 315.57,146.50 322.56,157.34 329.64,159.39 336.79,164.15 343.94,152.42 350.93,144.92 358.01,147.71 365.16,138.45 372.31,114.55 379.31,133.58 386.38,137.84 393.53,139.26 400.68,140.74 407.76,146.75 414.83,147.54 421.98,153.45 429.13,157.98 436.13,147.24 443.20,153.71 450.35,153.22 457.50,145.08 464.50,150.46 471.57,147.30 478.73,152.96 485.88,166.71 492.87,175.07 499.95,164.56 507.10,152.53 514.25,144.77 521.32,133.11 528.40,155.22 535.55,156.62 542.70,156.91 549.70,164.73 556.77,145.70 563.92,155.98 571.07,150.23 578.07,165.57 585.14,171.73 592.29,163.93 599.44,180.45 606.44,189.29 613.51,164.68 620.66,152.99 627.82,161.23 634.89,213.16 641.96,455.37 649.11,360.22 656.27,423.37 663.26,432.47 ' style='stroke-width: 3.20; stroke-linecap: butt;' />
+<rect x='67.04' y='71.66' width='624.62' height='401.98' style='stroke-width: 0.00;' />
+</g>
+<g clip-path='url(#cpMC4wMHw3MjAuMDB8MC4wMHw1NzYuMDA=)'>
+<polyline points='67.04,473.64 67.04,71.66 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
+<text x='57.80' y='385.26' text-anchor='end' style='font-size: 14.00px; font-family: Roboto Condensed;' textLength='17.30px' lengthAdjust='spacingAndGlyphs'>-60</text>
+<text x='57.80' y='277.95' text-anchor='end' style='font-size: 14.00px; font-family: Roboto Condensed;' textLength='17.30px' lengthAdjust='spacingAndGlyphs'>-30</text>
+<text x='57.80' y='170.63' text-anchor='end' style='font-size: 14.00px; font-family: Roboto Condensed;' textLength='6.91px' lengthAdjust='spacingAndGlyphs'>0</text>
+<polyline points='62.78,380.29 67.04,380.29 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
+<polyline points='62.78,272.97 67.04,272.97 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
+<polyline points='62.78,165.66 67.04,165.66 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
+<polyline points='67.04,473.64 691.65,473.64 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
+<polyline points='202.08,477.89 202.08,473.64 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
+<polyline points='344.02,477.89 344.02,473.64 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
+<polyline points='485.95,477.89 485.95,473.64 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
+<polyline points='627.89,477.89 627.89,473.64 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
+<text x='202.08' y='492.82' text-anchor='middle' style='font-size: 14.00px; font-family: Roboto Condensed;' textLength='27.65px' lengthAdjust='spacingAndGlyphs'>2005</text>
+<text x='344.02' y='492.82' text-anchor='middle' style='font-size: 14.00px; font-family: Roboto Condensed;' textLength='27.65px' lengthAdjust='spacingAndGlyphs'>2010</text>
+<text x='485.95' y='492.82' text-anchor='middle' style='font-size: 14.00px; font-family: Roboto Condensed;' textLength='27.65px' lengthAdjust='spacingAndGlyphs'>2015</text>
+<text x='627.89' y='492.82' text-anchor='middle' style='font-size: 14.00px; font-family: Roboto Condensed;' textLength='27.65px' lengthAdjust='spacingAndGlyphs'>2020</text>
+<text x='19.84' y='60.21' style='font-size: 14.00px; fill: #006DB5; font-family: Roboto Condensed;' textLength='133.49px' lengthAdjust='spacingAndGlyphs'>Reisijate arvu aastakasv</text>
+<text x='19.84' y='38.79' style='font-size: 21.00px; font-weight: bold; fill: #006DB5; font-family: Roboto Condensed;' textLength='464.39px' lengthAdjust='spacingAndGlyphs'> Rahvusvaheline reisiliiklus sadamate kaudu (kvartalid)</text>
+<text x='19.84' y='547.34' style='font-size: 11.20px; fill: #999999; font-family: Roboto Condensed;' textLength='98.89px' lengthAdjust='spacingAndGlyphs'>Allikas: Statistikaamet</text>
+<text x='19.84' y='559.44' style='font-size: 11.20px; fill: #999999; font-family: Roboto Condensed;' textLength='132.68px' lengthAdjust='spacingAndGlyphs'>Värskeim number: 31.03.2021</text>
+</g>
+</svg>
